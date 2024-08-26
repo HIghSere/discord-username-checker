@@ -51,11 +51,11 @@ function usernameCheck(username, proxy) {
                 timeout: 6000
             }).then((response) => {
                 if (response.status === 200 && response.data["taken"] === false) {
-                    console.log(`${color_1.color.green}✓ ${username} is valid.${color_1.color.white}`);
+                    console.log(`${color_1.color.green}✓ ${username} is valid${color_1.color.white}`);
                     fs_1.default.appendFileSync("data/validUsername.txt", `${username}\n`, "utf-8");
                 }
                 else {
-                    console.log(`${color_1.color.red}✖ ${username} is invalid.${color_1.color.white}`);
+                    console.log(`${color_1.color.red}✖ ${username} is invalid${color_1.color.white}`);
                 }
             }).catch((error) => {
                 if (error.response) {
@@ -63,11 +63,11 @@ function usernameCheck(username, proxy) {
                         console.log(`${color_1.color.yellow}△ ${proxy} is limited${color_1.color.white}`);
                     }
                     else {
-                        console.log(`${color_1.color.red}✖ error status: ${error.response.status}${color_1.color.white}`);
+                        console.log(`${color_1.color.red}✖ error${color_1.color.white}`);
                     }
                 }
                 else {
-                    console.log(`${color_1.color.red}✖ error status: ${error.response.status}${color_1.color.white}`);
+                    console.log(`${color_1.color.red}✖ error${color_1.color.white}`);
                 }
             });
         }
